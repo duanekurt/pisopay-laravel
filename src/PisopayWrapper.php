@@ -1,21 +1,26 @@
 <?php
 
 namespace Savants\PisopayWrapper;
-
+use Http;
 class PisopayWrapper
 {
 
   // Credentials
-  private $user = config('pisopay.user');
-  private $password = config('pisopay.password');
-  private $xgateway = config('pisopay.xgatewayauth');
+  protected $user;
+  protected $password;
+  protected $xgateway;
 
   // App
   public $checkoutUrl = '';
   public $checkoutStatus = '';
 
-  public function generateSession(){
+  public function __construct(){
+    $this->user  = config('pisopay.user');
+    $this->password  = config('pisopay.password');
+    $this->xgateway  = config('pisopay.xgatewayauth');
+  }
 
+  public function generateSession(){
     $response = Http::withHeaders([
       'X-Gateway-Auth' => $this->xgateway,
       'Content-Type' => 'application/json',

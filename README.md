@@ -6,9 +6,6 @@ Laravel Package for pisopay checkout
 
 ## Installation
 
-- All the `code` required to get started
-- Images of what it should look like
-
 ### Setup
 
 - To install the package

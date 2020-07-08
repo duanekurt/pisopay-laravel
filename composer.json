@@ -1,0 +1,48 @@
+{
+  "name": "savants/pisopay-laravel",
+  "description": "Laravel wrapper package for pisopay checkout",
+  "license": "MIT",
+  "authors" : [
+    {
+      "name": "Kurt Duane",
+      "email": "kurt.pci@gmail.com"
+    },
+    {
+      "name": "Ronnel Suan",
+      "email": "rsu.pci@gmail.com"
+    },
+    {
+      "name": "Fitz Patrick Yanes",
+      "email": "fitzpatrick.pci@gmail.com"
+    },
+    {
+      "name": "Cjay Del Prado",
+      "email": "cjaydelprado21.pci@gmail.com"
+    },
+    {
+      "name": "Ricardo De Guzman",
+      "email": "rdgjr.pci@gmail.com"
+    },
+    {
+      "name": "Alyssa Comia",
+      "email": "alyssacomia.pci@gmail.com"
+    },
+    {
+      "name": "Neo Miala",
+      "email": "neojay13.pci@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Savants\\PisopayWrapper\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Savants\\PisopayWrapper\\PisopayWrapperServiceProvider"
+      ]
+    }
+  }
+}

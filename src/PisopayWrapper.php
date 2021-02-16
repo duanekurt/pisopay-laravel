@@ -70,4 +70,20 @@ class PisopayWrapper
         return $this->checkoutUrl;
       }
 
+      public function traceTransaction($trace_no){
+        if (empty($trace_no)) {
+          dump('Trace # is required');
+          die();
+        }
+        $response = Http::withHeaders([
+          'X-Gateway-Auth' => $this->xgateway,
+          'Content-Type' => 'application/json',
+          'Authorization' => 'Bearer '.$this->generateSession()
+        ])->post('https://api.pisopay.com.ph/checkout/1.0/payment/inquiry',$trace_no);
+
+        if ($response->json()['responseCode'] == 0) {
+          return $response->json()['data'];
+        }
+      }
+
 }
